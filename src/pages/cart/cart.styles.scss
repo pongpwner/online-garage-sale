@@ -1,0 +1,17 @@
+.cart {
+  margin-top: 100px;
+  padding: 1%;
+
+  .empty-cart {
+    color: red;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .subtotal {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+}
