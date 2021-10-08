@@ -2,6 +2,7 @@ import React from "react";
 import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import { connect } from "react-redux";
+import CustomButton from "../../custom-button/custom-button.component";
 
 import {
   googleSignInStart,
@@ -51,10 +52,19 @@ class SignIn extends React.Component {
             handleChange={this.handleChange}
             required
           />
-          <button type="submit">Sign In</button>
-          <button type="button" onClick={googleSignInStart}>
-            Sign In With Google
-          </button>
+          <div className="buttons">
+            <CustomButton type="submit" label="Sign In">
+              Sign In
+            </CustomButton>
+            <CustomButton
+              type="button"
+              label="Google Sign In"
+              onClick={googleSignInStart}
+              isGoogleSignIn
+            >
+              Google Sign In
+            </CustomButton>
+          </div>
         </form>
       </div>
     );

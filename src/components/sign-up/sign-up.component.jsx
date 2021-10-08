@@ -3,6 +3,7 @@ import "./sign-up.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import { signUpStart } from "../../redux/user/user.actions.js";
 import { connect } from "react-redux";
+import CustomButton from "../../custom-button/custom-button.component";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class SignUp extends React.Component {
             handleChange={this.handleChange}
             value={confirmPassword}
           />
-          <button type="submit">sign up</button>
+          <CustomButton type="submit">sign up</CustomButton>
         </form>
       </div>
     );

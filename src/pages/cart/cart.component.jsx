@@ -8,6 +8,7 @@ import {
   selectCartTotal,
   selectCartItemsCount,
 } from "../../redux/cart/cart.selectors";
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
 const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
   <div className="cart">
@@ -19,7 +20,13 @@ const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
 
     <CartList />
     <div className="subtotal"> Cart Total: ${selectCartTotal}</div>
-    <Link to="/checkout">Go to Checkout</Link>
+
+    <StripeCheckoutButton price={selectCartTotal} />
+    <div className="test-warning">
+      *use the following card for test payments*
+      <br />
+      4242 4242 4242 4242 - Exp: 01/23- CVV:123
+    </div>
   </div>
 );
 const mapDispatchToProps = (dispatch) => ({
