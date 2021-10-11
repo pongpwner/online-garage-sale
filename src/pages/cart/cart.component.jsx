@@ -14,7 +14,7 @@ const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
   <div className="cart">
     <h1>Cart({selectCartItemsCount})</h1>
 
-    <div class="empty-cart" onClick={emptyCart}>
+    <div className="empty-cart" onClick={emptyCart}>
       Empty Cart
     </div>
 

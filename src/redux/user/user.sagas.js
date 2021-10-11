@@ -18,7 +18,7 @@ import {
   checkUserSession,
 } from "./user.actions";
 import { push } from "react-router-redux";
-import history from "../../history.js";
+import browserHistory from "../../history.js";
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
@@ -40,7 +40,7 @@ export function* googleSignIn() {
   try {
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
-    yield history.push("/");
+    yield browserHistory.push("/");
   } catch (error) {
     yield put(googleSignInFailure(error));
   }
@@ -69,7 +69,7 @@ export function* emailSignIn({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getSnapshotFromUserAuth(user);
-    yield history.push("/");
+    yield browserHistory.push("/");
   } catch (error) {
     yield put(emailSignInFailure(error));
   }
