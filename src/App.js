@@ -4,20 +4,31 @@ import Shop from "./pages/shop/shop.component";
 import Cart from "./pages/cart/cart.component";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Checkout from "./pages/checkout/checkout.component";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Router, Redirect } from "react-router-dom";
+import { checkUserSession } from "./redux/user/user.actions";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import history from "./history.js";
 
-function App() {
+function App({ checkUserSession }) {
+  useEffect(checkUserSession, [checkUserSession]);
   return (
-    <div className="App">
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Shop} />
-        <Route path="/cart" component={Cart} />
-        <Route path="/sign-in" component={SignInAndSignUp} />
-        <Route path="/checkout" component={Checkout} />
-      </Switch>
-    </div>
+    <Router history={history}>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Shop} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/sign-in" component={SignInAndSignUp} />
+          <Route path="/checkout" component={Checkout} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  checkUserSession: () => dispatch(checkUserSession()),
+});
+
+export default connect(null, mapDispatchToProps)(App);

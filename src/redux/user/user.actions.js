@@ -52,3 +52,7 @@ export const emailSignInFailure = (error) => ({
   type: USER_ACTION_TYPES.EMAIL_SIGN_IN_Failure,
   payload: error,
 });
+
+export const checkUserSession = () => ({
+  type: USER_ACTION_TYPES.CHECK_USER_SESSION,
+});

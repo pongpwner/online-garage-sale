@@ -15,7 +15,10 @@ import {
   signUpSuccess,
   signUpFailure,
   emailSignInFailure,
+  checkUserSession,
 } from "./user.actions";
+import { push } from "react-router-redux";
+import history from "../../history.js";
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
@@ -37,6 +40,7 @@ export function* googleSignIn() {
   try {
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
+    yield history.push("/");
   } catch (error) {
     yield put(googleSignInFailure(error));
   }
@@ -65,8 +69,19 @@ export function* emailSignIn({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getSnapshotFromUserAuth(user);
+    yield history.push("/");
   } catch (error) {
     yield put(emailSignInFailure(error));
+  }
+}
+
+export function* isUserAuthenticated() {
+  try {
+    const userAuth = yield getCurrentUser();
+    if (!userAuth) return;
+    yield getSnapshotFromUserAuth(userAuth);
+  } catch (error) {
+    yield put(googleSignInFailure(error));
   }
 }
 
@@ -87,6 +102,10 @@ export function* onSignInAfterSignUp() {
 export function* onEmailSignIn() {
   yield takeLatest(USER_ACTION_TYPES.EMAIL_SIGN_IN_START, emailSignIn);
 }
+
+export function* onCheckUserSession() {
+  yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated);
+}
 export function* userSagas() {
   yield all([
     call(onGoogleSignInStart),
@@ -94,5 +113,6 @@ export function* userSagas() {
     call(onSignUp),
     call(onSignInAfterSignUp),
     call(onEmailSignIn),
+    call(onCheckUserSession),
   ]);
 }
