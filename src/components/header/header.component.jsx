@@ -22,9 +22,14 @@ const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
           className="shop"
           onMouseOver={() => setHidden(false)}
           onMouseLeave={() => setHidden(true)}
+          onClick={() => setHidden(true)}
         >
           <Link to="/shop">Shop</Link>
-          <Dropdown options={dropdownOptions} hidden={hidden}></Dropdown>
+          <Dropdown
+            options={dropdownOptions}
+            hidden={hidden}
+            setHidden={setHidden}
+          ></Dropdown>
         </div>
 
         <Link to="/cart">Cart({selectCartItemsCount})</Link>

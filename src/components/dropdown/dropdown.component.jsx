@@ -3,7 +3,7 @@ import "./dropdown.styles.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const Dropdown = ({ children, options, hidden }) => {
+const Dropdown = ({ children, options, hidden, setHidden }) => {
   console.log(hidden);
   return hidden ? null : (
     <div className="dropdown">
@@ -15,6 +15,7 @@ const Dropdown = ({ children, options, hidden }) => {
           </li>
         ))}
       </ul>
+      <div onMouseEnter={() => setHidden(true)} className="background"></div>
     </div>
   );
 };
