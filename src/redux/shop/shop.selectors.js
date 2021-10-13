@@ -10,5 +10,10 @@ export const selectCollection = createSelector(
 export const selectElectronics = createSelector(
   [selectCollection],
 
-  (collection) => collection.filter((item) => item.category === "electronic")
+  (collection) => collection.filter((item) => item.category === "electronics")
+);
+export const selectToys = createSelector(
+  [selectCollection],
+
+  (collection) => collection.filter((item) => item.category === "toys")
 );

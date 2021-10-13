@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./dropdown.styles.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 const Dropdown = ({ children, options, hidden }) => {
   console.log(hidden);
@@ -17,4 +18,5 @@ const Dropdown = ({ children, options, hidden }) => {
     </div>
   );
 };
+
 export default Dropdown;
