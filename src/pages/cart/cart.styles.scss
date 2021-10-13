@@ -1,20 +1,51 @@
 .cart {
   margin-top: 100px;
   padding: 1%;
+  display: grid;
+  grid-template-columns: 250px 4fr 250px;
+
+  .section1 {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2% 0 2%;
+  }
+  .section3 {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2% 0 2%;
+    .section-item {
+      margin-bottom: 10px;
+    }
+    .subtotal {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
 
   .empty-cart {
     color: red;
     display: inline-block;
+
     &:hover {
       text-decoration: underline;
     }
   }
-
-  .subtotal {
-    font-size: 1.3em;
-    font-weight: bold;
+  .cart-list {
+    grid-column: 2;
+    grid-row: 2;
   }
+
   .test-warning {
     color: red;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 }

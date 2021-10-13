@@ -3,7 +3,7 @@ import "./sign-up.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import { signUpStart } from "../../redux/user/user.actions.js";
 import { connect } from "react-redux";
-import CustomButton from "../../custom-button/custom-button.component";
+import CustomButton from "../custom-button/custom-button.component";
 
 class SignUp extends React.Component {
   constructor(props) {

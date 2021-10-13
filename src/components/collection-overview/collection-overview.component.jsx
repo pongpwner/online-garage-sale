@@ -5,18 +5,22 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import { createStructuredSelector } from "reselect";
 import CollectionItem from "../collection-item/collection-item.component";
 
-const CollectionOverview = ({ collection }) => (
+const CollectionOverview = ({ collection, title }) => (
   <div className="collection-overview">
-    {console.log(collection)}
-    {collection.map((item) => (
-      <CollectionItem
-        cartItem={item}
-        name={item.name}
-        price={item.price}
-        url={item.imageUrl}
-        key={item.id}
-      />
-    ))}
+    <h1>{title}</h1>
+    <div className="items">
+      {collection.map((item) => (
+        <CollectionItem
+          cartItem={item}
+          name={item.name}
+          price={item.price}
+          salePrice={item.salePrice}
+          url={item.imageUrl}
+          key={item.id}
+          condition={item.condition}
+        />
+      ))}
+    </div>
   </div>
 );
 const mapStateToProps = createStructuredSelector({

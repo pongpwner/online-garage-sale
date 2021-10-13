@@ -1,9 +1,36 @@
 .collection-item {
   padding: 5%;
-  width: 20vw;
+
   font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   .item-image {
     width: 100%;
     height: 85%;
+    max-height: 400px;
+  }
+  .item-info {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    .item-price {
+      font-weight: bold;
+      .old-price {
+        color: lightgray;
+        text-decoration: line-through;
+      }
+      .new-price {
+        color: red;
+        padding-left: 10px;
+      }
+    }
+    .condition {
+      font-size: 0.8em;
+      font-style: italic;
+    }
   }
 }

@@ -10,7 +10,7 @@ const CartList = ({ selectCartItems }) => (
     {selectCartItems.map((cartItem) => (
       <CartItem
         name={cartItem.name}
-        price={cartItem.price}
+        price={cartItem.salePrice ? cartItem.salePrice : cartItem.price}
         url={cartItem.imageUrl}
         key={cartItem.id}
         id={cartItem.id}

@@ -4,7 +4,7 @@ import CollectionOverview from "../../components/collection-overview/collection-
 
 const Shop = () => (
   <div className="shop">
-    <CollectionOverview />
+    <CollectionOverview title="All" />
   </div>
 );
 

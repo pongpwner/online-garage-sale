@@ -17,7 +17,7 @@ function App({ checkUserSession }) {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" component={Shop} />
+          <Route exact path="/shop" component={Shop} />
           <Route path="/cart" component={Cart} />
           <Route path="/sign-in" component={SignInAndSignUp} />
           <Route path="/checkout" component={Checkout} />

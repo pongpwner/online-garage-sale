@@ -12,17 +12,24 @@ import StripeCheckoutButton from "../../components/stripe-button/stripe-button.c
 
 const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
   <div className="cart">
-    <h1>Cart({selectCartItemsCount})</h1>
+    <div className="section1">
+      <h1 className="section-item">Cart({selectCartItemsCount})</h1>
 
-    <div className="empty-cart" onClick={emptyCart}>
-      Empty Cart
+      <div className="empty-cart section-item" onClick={emptyCart}>
+        Empty Cart
+      </div>
     </div>
 
     <CartList />
-    <div className="subtotal"> Cart Total: ${selectCartTotal}</div>
+    <div className="section3">
+      <div className="subtotal section-item">
+        {" "}
+        Cart Total: ${selectCartTotal}
+      </div>
 
-    <StripeCheckoutButton price={selectCartTotal} />
-    <div className="test-warning">
+      <StripeCheckoutButton price={selectCartTotal} />
+    </div>
+    <div className="test-warning ">
       *use the following card for test payments*
       <br />
       4242 4242 4242 4242 - Exp: 01/23- CVV:123

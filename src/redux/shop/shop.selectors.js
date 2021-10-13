@@ -7,3 +7,8 @@ export const selectCollection = createSelector(
   (shop) => shop.collection
 );
 
+export const selectElectronics = createSelector(
+  [selectCollection],
+
+  (collection) => collection.filter((item) => item.category === "electronic")
+);

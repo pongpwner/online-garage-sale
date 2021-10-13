@@ -5,15 +5,36 @@
   align-items: center;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between;
 
+  .header-links {
+    display: flex;
+    align-items: center;
+  }
   a,
-  .sign-out {
+  .sign-out,
+  .shop {
     color: white;
-    padding-left: 15px;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    padding: 10px 7px 10px 7px;
+    margin: 3px;
     text-decoration: none;
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+  .shop {
+    display: flex;
+    padding: 0;
+    margin: 3px;
+    a {
+      font-size: 1em;
+      margin: 0;
+      justify-content: stretch;
+      align-items: stretch;
+      border: none;
+    }
   }
   .user-name {
     color: white;
@@ -21,6 +42,6 @@
   }
   .sign-in,
   .sign-out {
-    padding-right: 15px;
+    padding-right: 25px;
   }
 }
