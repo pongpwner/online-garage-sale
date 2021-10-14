@@ -28,9 +28,9 @@
     top: 60px;
     left: 0%;
     width: 100vw;
-    height: 2000px;
-    margin-top: -54px;
-    margin-left: -89px;
+    height: calc(100vh - 54px);
+    margin-top: -60px;
+    margin-left: -72px;
     padding: none;
     /*
     z- index must be lower than pop up box
