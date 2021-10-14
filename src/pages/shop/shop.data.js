@@ -3,6 +3,7 @@ import item2 from "../../assets/images/item2.png";
 import item3 from "../../assets/images/item3.jpg";
 import item4 from "../../assets/images/item4.jpg";
 import item5 from "../../assets/images/item5.jpg";
+import item6 from "../../assets/images/item6.jpg";
 const SHOP_DATA = [
   {
     name: "yoyo",
@@ -23,8 +24,8 @@ const SHOP_DATA = [
   {
     name: "kendama",
     condition: "New",
-    price: 25,
-    salePrice: 20,
+    price: 20,
+    oldPrice: 25,
     category: "toys",
     imageUrl: item3,
     id: 2,
@@ -44,6 +45,15 @@ const SHOP_DATA = [
     category: "electronics",
     imageUrl: item5,
     id: 4,
+  },
+  {
+    name: "Froppy Socks (medium)",
+    condition: "New",
+    oldPrice: 20,
+    price: 1,
+    category: "clothing",
+    imageUrl: item6,
+    id: 5,
   },
 ];
 

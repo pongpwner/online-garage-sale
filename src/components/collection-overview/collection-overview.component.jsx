@@ -12,7 +12,7 @@ const CollectionOverview = ({ collection, title }) => (
           cartItem={item}
           name={item.name}
           price={item.price}
-          salePrice={item.salePrice}
+          oldPrice={item.oldPrice}
           url={item.imageUrl}
           key={item.id}
           condition={item.condition}

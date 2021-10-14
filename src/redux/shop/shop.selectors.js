@@ -17,3 +17,6 @@ export const selectToys = createSelector(
 
   (collection) => collection.filter((item) => item.category === "toys")
 );
+export const selectClothing = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.category === "clothing")
+);

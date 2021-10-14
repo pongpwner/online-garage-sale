@@ -8,7 +8,7 @@ const CollectionItem = ({
   cartItem,
   name,
   price,
-  salePrice,
+  oldPrice,
   url,
   addToCart,
   condition,
@@ -19,10 +19,10 @@ const CollectionItem = ({
       <div className="item-name">{name}</div>
       <div className="condition">{condition}</div>
       <div className="item-price">
-        <span className={` ${salePrice ? "old-price" : ""}`}>${price}</span>
-        <span className={` ${salePrice ? "new-price" : ""}`}>
-          {salePrice ? `$${salePrice}` : ""}
+        <span className={` ${oldPrice ? "old-price" : ""}`}>
+          {oldPrice ? `$${oldPrice}` : ``}
         </span>
+        <span className={` ${oldPrice ? "new-price" : ""}`}>${price}</span>
       </div>
     </div>
 

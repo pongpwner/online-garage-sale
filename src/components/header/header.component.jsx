@@ -6,13 +6,17 @@ import { selectCurrentUser } from "../../redux/user/user.selector";
 import { signOutStart } from "../../redux/user/user.actions";
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import Dropdown from "../dropdown/dropdown.component";
-import { selectCategory } from "../../redux/shop/shop.selectors";
+import {
+  selectCategory,
+  selectElectronics,
+} from "../../redux/shop/shop.selectors";
 
 const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
   const [hidden, setHidden] = useState(true);
   const dropdownOptions = [
-    { label: "electronics", url: "/shop/electronics", id: 0 },
-    { label: "toys", url: "/shop/toys", id: 1 },
+    { label: "clothing", url: "/shop/clothing", id: 0 },
+    { label: "electronics", url: "/shop/electronics", id: 1 },
+    { label: "toys", url: "/shop/toys", id: 2 },
   ];
   return (
     <div className="header">
