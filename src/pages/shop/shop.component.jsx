@@ -24,7 +24,7 @@ const Shop = ({
   sortHighToLow,
   sortOriginal,
 }) => {
-  const [dropdown, setDropdown] = useState("none");
+  const [dropdown, setDropdown] = useState("noone");
   const handleChange = (event) => {
     setDropdown(event.target.value);
   };

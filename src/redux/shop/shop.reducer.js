@@ -11,12 +11,14 @@ const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SHOP_ACTION_TYPES.SORT_lOW_TO_HIGH:
       return {
+        ...state,
         collection: [
           ...state.collection.sort((item1, item2) => item1.price - item2.price),
         ],
       };
     case SHOP_ACTION_TYPES.SORT_HIGH_TO_LOW:
       return {
+        ...state,
         collection: [
           ...state.collection.sort((item1, item2) => item2.price - item1.price),
         ],
@@ -24,6 +26,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
 
     case SHOP_ACTION_TYPES.SORT_ORIGINAL:
       return {
+        ...state,
         collection: [
           ...state.collection.sort((item1, item2) => item1.id - item2.id),
         ],
