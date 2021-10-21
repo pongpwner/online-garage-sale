@@ -1,0 +1,26 @@
+.category {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .category-image {
+      width: 100%;
+      height: 100%;
+
+      z-index: 0;
+    }
+    .category-text {
+      position: absolute;
+      z-index: 1;
+      font-size: 2.5rem;
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
