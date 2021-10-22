@@ -1,10 +1,12 @@
 import React from "react";
 import "./home.styles.scss";
 import CategoryOverview from "../../components/category-overview/category-overview.component";
+import Slideshow from "../../components/slideshow/slideshow.component";
 
 const Home = () => (
   <div className="home">
-    <div> carosel that goes through shop items</div>
+    <Slideshow />
+    <h1>Shop by Category</h1>
     <CategoryOverview />
   </div>
 );

@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     background-color: white;
     opacity: 1;
     li {
@@ -35,7 +35,7 @@
     /*
     z- index must be lower than pop up box
    */
-    z-index: 1;
+    z-index: 2;
     background-color: Black;
     //for transparency
     opacity: 0.6;

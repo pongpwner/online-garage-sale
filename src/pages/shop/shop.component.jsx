@@ -6,6 +6,12 @@ import {
   selectCollection,
   selectToys,
   selectClothing,
+  selectBooks,
+  selectFurniture,
+  selectGames,
+  selectSports,
+  selectTools,
+  selectSale,
 } from "../../redux/shop/shop.selectors";
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router";
@@ -16,15 +22,21 @@ import {
 } from "../../redux/shop/shop.actions";
 
 const Shop = ({
-  selectCollection,
-  selectElectronics,
-  selectClothing,
-  selectToys,
+  sortOriginal,
   sortLowToHigh,
   sortHighToLow,
-  sortOriginal,
+  selectCollection,
+  selectBooks,
+  selectClothing,
+  selectElectronics,
+  selectFurniture,
+  selectGames,
+  selectSale,
+  selectSports,
+  selectTools,
+  selectToys,
 }) => {
-  const [dropdown, setDropdown] = useState("noone");
+  const [dropdown, setDropdown] = useState("none");
   const handleChange = (event) => {
     setDropdown(event.target.value);
   };
@@ -72,6 +84,25 @@ const Shop = ({
         <Route path="/shop/clothing">
           <CollectionOverview collection={selectClothing} title="Clothing" />
         </Route>
+        <Route path="/shop/books">
+          <CollectionOverview collection={selectBooks} title="Books" />
+        </Route>
+
+        <Route path="/shop/games">
+          <CollectionOverview collection={selectGames} title="Games" />
+        </Route>
+        <Route path="/shop/sports">
+          <CollectionOverview collection={selectSports} title="Sports" />
+        </Route>
+        <Route path="/shop/furniture">
+          <CollectionOverview collection={selectFurniture} title="Furniture" />
+        </Route>
+        <Route path="/shop/tools">
+          <CollectionOverview collection={selectTools} title="Tools" />
+        </Route>
+        <Route path="/shop/sale">
+          <CollectionOverview collection={selectSale} title="Sale" />
+        </Route>
       </Switch>
     </div>
   );
@@ -81,6 +112,12 @@ const mapStateToProps = (state) => ({
   selectElectronics: selectElectronics(state),
   selectToys: selectToys(state),
   selectClothing: selectClothing(state),
+  selectBooks: selectBooks(state),
+  selectVideoGames: selectGames(state),
+  selectSports: selectSports(state),
+  selectFurniture: selectFurniture(state),
+  selectTools: selectTools(state),
+  selectSale: selectSale(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

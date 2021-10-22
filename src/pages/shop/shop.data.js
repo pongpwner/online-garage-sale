@@ -4,6 +4,10 @@ import item3 from "../../assets/images/item3.jpg";
 import item4 from "../../assets/images/item4.jpg";
 import item5 from "../../assets/images/item5.jpg";
 import item6 from "../../assets/images/item6.jpg";
+import item7 from "../../assets/images/item7.jpg";
+import item8 from "../../assets/images/item8.jpg";
+import item9 from "../../assets/images/item9.jpg";
+import item10 from "../../assets/images/item10.jpg";
 const SHOP_DATA = [
   {
     name: "yoyo",
@@ -11,15 +15,15 @@ const SHOP_DATA = [
     price: 100.0,
     imageUrl: item1,
     category: "toys",
-    id: 0,
+    id: 1,
   },
   {
     name: "gamecube controller",
     condition: "New",
     price: 25.0,
-    category: "electronics",
+    category: "games",
     imageUrl: item2,
-    id: 1,
+    id: 2,
   },
   {
     name: "kendama",
@@ -28,7 +32,7 @@ const SHOP_DATA = [
     oldPrice: 25,
     category: "toys",
     imageUrl: item3,
-    id: 2,
+    id: 3,
   },
   {
     name: "CRT TV",
@@ -36,15 +40,16 @@ const SHOP_DATA = [
     price: 5,
     category: "electronics",
     imageUrl: item4,
-    id: 3,
+    id: 4,
   },
   {
     name: "Xbox 360",
     condition: "Used",
+    oldPrice: 75,
     price: 50,
     category: "electronics",
     imageUrl: item5,
-    id: 4,
+    id: 5,
   },
   {
     name: "Froppy Socks (medium)",
@@ -53,7 +58,39 @@ const SHOP_DATA = [
     price: 1,
     category: "clothing",
     imageUrl: item6,
-    id: 5,
+    id: 6,
+  },
+  {
+    name: "Euthyphro",
+    condition: "used",
+    price: 5,
+    category: "books",
+    imageUrl: item7,
+    id: 7,
+  },
+  {
+    name: "Soccer Ball",
+    condition: "new",
+    price: 40,
+    category: "sports",
+    imageUrl: item8,
+    id: 8,
+  },
+  {
+    name: "Wooden Chair",
+    condition: "used",
+    price: 15,
+    category: "furniture",
+    imageUrl: item9,
+    id: 9,
+  },
+  {
+    name: "tools",
+    condition: "used",
+    price: 30,
+    category: "tools",
+    imageUrl: item10,
+    id: 10,
   },
 ];
 

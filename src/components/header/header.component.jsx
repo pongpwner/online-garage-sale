@@ -14,9 +14,15 @@ import {
 const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
   const [hidden, setHidden] = useState(true);
   const dropdownOptions = [
+    { label: "sale", url: "/shop/sale", id: -1 },
     { label: "clothing", url: "/shop/clothing", id: 0 },
     { label: "electronics", url: "/shop/electronics", id: 1 },
     { label: "toys", url: "/shop/toys", id: 2 },
+    { label: "books", url: "/shop/books", id: 3 },
+    { label: "games", url: "/shop/games", id: 4 },
+    { label: "sports", url: "/shop/sports", id: 5 },
+    { label: "furniture", url: "/shop/furniture", id: 6 },
+    { label: "tools", url: "/shop/tools", id: 7 },
   ];
   return (
     <div className="header">

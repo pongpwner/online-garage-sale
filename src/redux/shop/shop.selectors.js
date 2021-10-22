@@ -20,3 +20,22 @@ export const selectToys = createSelector(
 export const selectClothing = createSelector([selectCollection], (collection) =>
   collection.filter((item) => item.category === "clothing")
 );
+export const selectSale = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.oldPrice !== undefined)
+);
+export const selectBooks = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.category === "books")
+);
+export const selectGames = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.category === "games")
+);
+export const selectSports = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.category === "sports")
+);
+export const selectFurniture = createSelector(
+  [selectCollection],
+  (collection) => collection.filter((item) => item.category === "furniture")
+);
+export const selectTools = createSelector([selectCollection], (collection) =>
+  collection.filter((item) => item.category === "tools")
+);
