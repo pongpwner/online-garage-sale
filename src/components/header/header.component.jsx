@@ -6,9 +6,11 @@ import { selectCurrentUser } from "../../redux/user/user.selector";
 import { signOutStart } from "../../redux/user/user.actions";
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import Dropdown from "../dropdown/dropdown.component";
+
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import cartIcon from "../../assets/icons/shopping-cart-30.png";
 import logo from "../../assets/icons/gridsome.svg";
+import AccountDropdown from "../account-dropdown/account-dropdown.component";
 import {
   selectCategory,
   selectElectronics,
@@ -35,45 +37,15 @@ const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
         <Link to="/">
           <img className="logo" src={logo} alt="logo"></img>{" "}
         </Link>
-        <div
-          className="shop"
-          onMouseOver={() => setShopDropdownHidden(false)}
-          onMouseLeave={() => setShopDropdownHidden(true)}
-          onClick={() => setShopDropdownHidden(true)}
-        >
-          <Link to="/shop">Shop</Link>
-          <Dropdown
-            options={dropdownOptions}
-            hidden={shopDropdownHidden}
-            setHidden={setShopDropdownHidden}
-          ></Dropdown>
-        </div>
+
+        <Dropdown
+          labelLink="/shop"
+          label="Shop"
+          dropdownList={dropdownOptions}
+        />
       </div>
       <div className="header-links group2">
-        <div
-          className="account"
-          onMouseOver={() => setAccountDropdownHidden(false)}
-          onMouseLeave={() => setAccountDropdownHidden(true)}
-          onClick={() => setAccountDropdownHidden(true)}
-        >
-          {selectCurrentUser ? (
-            <div className="user-name">
-              Hello, {selectCurrentUser.displayName}
-            </div>
-          ) : null}
-          <Dropdown
-            options={dropdownOptions}
-            hidden={accountDropdownHidden}
-            setHidden={setAccountDropdownHidden}
-            account
-            signout={signOutStart}
-          ></Dropdown>
-        </div>
-        {selectCurrentUser ? null : (
-          <div className="sign-in">
-            <Link to="/sign-in">Sign In</Link>
-          </div>
-        )}
+        <AccountDropdown signout={signOutStart} />
 
         <CartDropdown itemCount={selectCartItemsCount} />
       </div>

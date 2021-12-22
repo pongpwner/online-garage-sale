@@ -1,7 +1,9 @@
-.dropdown {
+.account-dropdown {
   position: relative;
   .dropdown-label {
     padding: 10px 7px 10px 7px;
+    color: white;
+    font-size: 1.2rem;
     &:hover {
       border: 1px solid white;
     }
@@ -13,6 +15,7 @@
     top: 48px;
     z-index: 2;
     min-width: 200px;
+    right: 0;
     a {
       color: black;
     }
@@ -39,7 +42,7 @@
     position: absolute;
     background-color: black;
     opacity: 0.5;
-    left: -50vw;
+    left: -100vw;
     display: none;
     z-index: 1;
   }
