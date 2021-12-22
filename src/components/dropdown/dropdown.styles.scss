@@ -18,7 +18,7 @@
     }
   }
 
-  left: 72px;
+  left: 222px;
   top: 54px;
   a {
     color: black;
@@ -27,11 +27,36 @@
     position: absolute;
     top: 60px;
     left: 0%;
-    width: 100vw;
+    width: 150vw;
     height: calc(100vh - 54px);
     margin-top: -60px;
-    margin-left: -72px;
+    margin-left: -50vw;
     padding: none;
+    /*
+    z- index must be lower than pop up box
+   */
+    z-index: 2;
+    background-color: Black;
+    //for transparency
+    opacity: 0.6;
+    overflow: hidden;
+  }
+}
+.account {
+  left: unset;
+  top: 54px;
+  right: 150px;
+  .background {
+    position: absolute;
+    top: 60px;
+
+    left: 0;
+    width: 4000px;
+    height: calc(100vh - 54px);
+    margin-top: -60px;
+    margin-left: -2000px;
+    padding: none;
+    overflow: hidden;
     /*
     z- index must be lower than pop up box
    */

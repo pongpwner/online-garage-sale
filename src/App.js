@@ -1,5 +1,5 @@
 import Header from "./components/header/header.component";
-import "./App.css";
+import "./global-styles.scss";
 import Shop from "./pages/shop/shop.component";
 import Cart from "./pages/cart/cart.component";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";

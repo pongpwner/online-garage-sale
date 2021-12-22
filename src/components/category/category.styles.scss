@@ -4,7 +4,10 @@
   width: 300px;
   height: 250px;
   border: 1px solid black;
-  background-color: gray;
+  background-color: white;
+  &:hover {
+    background-color: gray;
+  }
   a {
     display: flex;
     justify-content: center;
@@ -14,6 +17,7 @@
       width: 100%;
       height: 100%;
       z-index: 0;
+      opacity: 0.6;
     }
     .category-text {
       position: absolute;

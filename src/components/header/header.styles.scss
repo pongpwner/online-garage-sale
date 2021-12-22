@@ -3,14 +3,21 @@
   display: flex;
   background-color: black;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  z-index: 3;
   top: 0;
   width: 100%;
   justify-content: space-between;
 
+  .group1 {
+    margin-left: 3rem;
+  }
   .header-links {
     display: flex;
     align-items: center;
+    .logo {
+      height: 40px;
+    }
   }
   a,
   .sign-out,
@@ -20,14 +27,14 @@
     padding: 10px 7px 10px 7px;
     margin: 3px;
     text-decoration: none;
-    &:hover {
-      border: 1px solid white;
-    }
   }
   .shop {
     display: flex;
     padding: 0;
     margin: 3px;
+    &:hover {
+      border: 1px solid white;
+    }
     a {
       font-size: 1em;
       margin: 0;
@@ -39,9 +46,18 @@
   .user-name {
     color: white;
     font-size: 1.2em;
+    padding: 10px;
+    &:hover {
+      border: 1px solid white;
+    }
   }
   .sign-in,
   .sign-out {
     padding-right: 25px;
+  }
+  .group2 {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
   }
 }

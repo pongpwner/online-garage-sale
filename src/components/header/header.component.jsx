@@ -6,13 +6,17 @@ import { selectCurrentUser } from "../../redux/user/user.selector";
 import { signOutStart } from "../../redux/user/user.actions";
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import Dropdown from "../dropdown/dropdown.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import cartIcon from "../../assets/icons/shopping-cart-30.png";
+import logo from "../../assets/icons/gridsome.svg";
 import {
   selectCategory,
   selectElectronics,
 } from "../../redux/shop/shop.selectors";
 
 const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
-  const [hidden, setHidden] = useState(true);
+  const [shopDropdownHidden, setShopDropdownHidden] = useState(true);
+  const [accountDropdownHidden, setAccountDropdownHidden] = useState(true);
   const dropdownOptions = [
     { label: "sale", url: "/shop/sale", id: -1 },
     { label: "clothing", url: "/shop/clothing", id: 0 },
@@ -24,40 +28,55 @@ const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
     { label: "furniture", url: "/shop/furniture", id: 6 },
     { label: "tools", url: "/shop/tools", id: 7 },
   ];
+
   return (
     <div className="header">
-      <span className="header-links">
-        <Link to="/">Home </Link>
+      <div className="header-links group1">
+        <Link to="/">
+          <img className="logo" src={logo} alt="logo"></img>{" "}
+        </Link>
         <div
           className="shop"
-          onMouseOver={() => setHidden(false)}
-          onMouseLeave={() => setHidden(true)}
-          onClick={() => setHidden(true)}
+          onMouseOver={() => setShopDropdownHidden(false)}
+          onMouseLeave={() => setShopDropdownHidden(true)}
+          onClick={() => setShopDropdownHidden(true)}
         >
           <Link to="/shop">Shop</Link>
           <Dropdown
             options={dropdownOptions}
-            hidden={hidden}
-            setHidden={setHidden}
+            hidden={shopDropdownHidden}
+            setHidden={setShopDropdownHidden}
           ></Dropdown>
         </div>
-
-        <Link to="/cart">Cart({selectCartItemsCount})</Link>
-      </span>
-
-      {selectCurrentUser ? (
-        <div className="user-name">Welcome {selectCurrentUser.displayName}</div>
-      ) : null}
-
-      {selectCurrentUser ? (
-        <div className="sign-out" onClick={signOutStart}>
-          Sign Out
+      </div>
+      <div className="header-links group2">
+        <div
+          className="account"
+          onMouseOver={() => setAccountDropdownHidden(false)}
+          onMouseLeave={() => setAccountDropdownHidden(true)}
+          onClick={() => setAccountDropdownHidden(true)}
+        >
+          {selectCurrentUser ? (
+            <div className="user-name">
+              Hello, {selectCurrentUser.displayName}
+            </div>
+          ) : null}
+          <Dropdown
+            options={dropdownOptions}
+            hidden={accountDropdownHidden}
+            setHidden={setAccountDropdownHidden}
+            account
+            signout={signOutStart}
+          ></Dropdown>
         </div>
-      ) : (
-        <div className="sign-in">
-          <Link to="/sign-in">Sign In</Link>
-        </div>
-      )}
+        {selectCurrentUser ? null : (
+          <div className="sign-in">
+            <Link to="/sign-in">Sign In</Link>
+          </div>
+        )}
+
+        <CartDropdown itemCount={selectCartItemsCount} />
+      </div>
     </div>
   );
 };
