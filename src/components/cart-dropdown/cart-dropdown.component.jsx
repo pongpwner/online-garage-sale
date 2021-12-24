@@ -3,10 +3,15 @@ import "./cart-dropdown.styles.scss";
 import cartIcon from "../../assets/icons/shopping-cart-30.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectCartItems } from "../../redux/cart/cart.selectors";
+import {
+  selectCartItems,
+  selectCartTotal,
+} from "../../redux/cart/cart.selectors";
 import CartItem from "../cart-item/cart-item.component";
 
-const CartDropdown = ({ itemCount, cartItems }) => {
+import CartDropdownItem from "../cart-dropdown-item/cart-dropdown-item.component";
+
+const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
   return (
     <div className="cart-dropdown">
       <Link to="/cart">
@@ -17,11 +22,12 @@ const CartDropdown = ({ itemCount, cartItems }) => {
       </Link>
       <div className="dropdown-content">
         {itemCount < 1 ? (
-          <div>cart empty</div>
+          <div className="empty-cart">cart empty</div>
         ) : (
           <div className="cart-list">
+            <div className="cart-total">total:${cartTotal}</div>
             {cartItems.map((cartItem) => (
-              <CartItem
+              <CartDropdownItem
                 name={cartItem.name}
                 price={cartItem.salePrice ? cartItem.salePrice : cartItem.price}
                 url={cartItem.imageUrl}
@@ -30,6 +36,7 @@ const CartDropdown = ({ itemCount, cartItems }) => {
                 quantity={cartItem.quantity}
               />
             ))}
+            <Link to="cart">Checkout</Link>
           </div>
         )}
       </div>
@@ -38,5 +45,7 @@ const CartDropdown = ({ itemCount, cartItems }) => {
 };
 const mapStateToProps = (state) => ({
   cartItems: selectCartItems(state),
+  cartTotal: selectCartTotal(state),
 });
+
 export default connect(mapStateToProps)(CartDropdown);
