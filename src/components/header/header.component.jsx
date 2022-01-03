@@ -9,7 +9,7 @@ import Dropdown from "../dropdown/dropdown.component";
 
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import cartIcon from "../../assets/icons/shopping-cart-30.png";
-import logo from "../../assets/icons/gridsome.svg";
+import logo from "../../assets/icons/ogs-logo.png";
 import AccountDropdown from "../account-dropdown/account-dropdown.component";
 import {
   selectCategory,

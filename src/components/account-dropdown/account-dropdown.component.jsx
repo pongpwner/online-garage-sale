@@ -12,7 +12,9 @@ const AccountDropdown = ({ currentUser, signout }) => {
           <div className="dropdown-label">Hello, {currentUser.displayName}</div>
 
           <div className="dropdown-content">
-            <div onClick={signout}>Sign Out</div>
+            <div className="sign-out" onClick={signout}>
+              Sign Out
+            </div>
           </div>
           <div className="background"></div>
         </div>

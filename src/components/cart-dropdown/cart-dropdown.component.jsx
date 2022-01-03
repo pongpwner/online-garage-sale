@@ -26,16 +26,20 @@ const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
         ) : (
           <div className="cart-list">
             <div className="cart-total">total:${cartTotal}</div>
-            {cartItems.map((cartItem) => (
-              <CartDropdownItem
-                name={cartItem.name}
-                price={cartItem.salePrice ? cartItem.salePrice : cartItem.price}
-                url={cartItem.imageUrl}
-                key={cartItem.id}
-                id={cartItem.id}
-                quantity={cartItem.quantity}
-              />
-            ))}
+            <div className="cart-items">
+              {cartItems.map((cartItem) => (
+                <CartDropdownItem
+                  name={cartItem.name}
+                  price={
+                    cartItem.salePrice ? cartItem.salePrice : cartItem.price
+                  }
+                  url={cartItem.imageUrl}
+                  key={cartItem.id}
+                  id={cartItem.id}
+                  quantity={cartItem.quantity}
+                />
+              ))}
+            </div>
             <Link to="cart">Checkout</Link>
           </div>
         )}

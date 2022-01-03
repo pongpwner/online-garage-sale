@@ -1,7 +1,9 @@
 .cart-dropdown {
   float: right;
   position: relative;
-
+  .cart-items {
+    overflow: scroll;
+  }
   .cart-icon-container {
     display: flex;
     align-items: center;
@@ -46,7 +48,7 @@
     max-height: 25vh;
     min-height: 15vh;
     min-width: 200px;
-    overflow: scroll;
+
     border: 1px solid gray;
 
     .cart-total {

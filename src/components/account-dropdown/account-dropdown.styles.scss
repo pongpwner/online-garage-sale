@@ -11,13 +11,20 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: lightgray;
-    top: 48px;
+    background-color: white;
+    top: 47px;
     z-index: 2;
     min-width: 200px;
     right: 0;
-    a {
+    .sign-out {
       color: black;
+      background-color: white;
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      &:hover {
+        background-color: lightgray;
+      }
     }
 
     .cart-list {
@@ -29,6 +36,8 @@
   &:hover .background {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &:hover .background {
     &:hover {
@@ -41,7 +50,7 @@
     height: 100vh;
     position: absolute;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.8;
     left: -100vw;
     display: none;
     z-index: 1;

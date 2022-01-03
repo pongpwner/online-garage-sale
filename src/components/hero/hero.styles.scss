@@ -31,6 +31,10 @@
       font-size: 3rem;
       max-width: 50%;
       gap: 3rem;
+      align-items: center;
+      .down-arrow {
+        width: 50px;
+      }
     }
   }
 }

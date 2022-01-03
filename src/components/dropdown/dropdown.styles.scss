@@ -9,12 +9,18 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: lightgray;
+    background-color: white;
     top: 48px;
     z-index: 2;
-    min-width: 200px;
+    min-width: 150px;
+    opacity: 1;
     a {
       color: black;
+      font-size: 1.5rem;
+      background-color: white;
+      &:hover {
+        background-color: lightgray;
+      }
     }
 
     .cart-list {
@@ -38,7 +44,7 @@
     height: 100vh;
     position: absolute;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.8;
     left: -50vw;
     display: none;
     z-index: 1;

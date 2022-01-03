@@ -76,7 +76,7 @@ const CategoryOverview = ({
     },
   ];
   return (
-    <div className="category-overview">
+    <div className="category-overview" id="shop-categories">
       {categories.map((category) => (
         <Category
           key={category.id}
