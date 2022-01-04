@@ -2,10 +2,12 @@
   position: relative;
   .dropdown-label {
     padding: 10px 7px 10px 7px;
-    color: white;
-    font-size: 1.2rem;
+
     &:hover {
       border: 1px solid white;
+    }
+    img {
+      filter: invert(1);
     }
   }
   .dropdown-content {
@@ -16,6 +18,9 @@
     z-index: 2;
     min-width: 200px;
     right: 0;
+    .account-name {
+      font-size: 1.2rem;
+    }
     .sign-out {
       color: black;
       background-color: white;
