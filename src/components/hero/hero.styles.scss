@@ -1,7 +1,7 @@
 .hero {
   margin-top: 60px;
   flex-grow: 2;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-color: white;
   width: 100%;
   overflow: hidden;
@@ -14,7 +14,8 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    font-size: 8rem;
+    font-size: clamp(3rem, 0.7041rem + 4.9796vw, 8rem);
+    //font-size: clamp(2.5rem, 0.7041rem + 8.9796vw, 8rem);
     font-weight: 900;
     line-height: 1.2;
     text-align: center;
@@ -28,13 +29,20 @@
       display: flex;
       flex-direction: column;
       font-weight: 900;
-      font-size: 3rem;
+      font-size: clamp(1.5rem, 1.0102rem + 1.249vw, 3rem);
+
       max-width: 50%;
       gap: 3rem;
       align-items: center;
+
       .down-arrow {
         width: 50px;
       }
+    }
+
+    .slideshow {
+      width: clamp(150px, 30vw, 400px);
+      height: clamp(150px, 30vw, 400px);
     }
   }
 }

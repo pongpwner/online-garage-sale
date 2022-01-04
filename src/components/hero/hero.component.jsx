@@ -11,8 +11,13 @@ const Hero = () => {
         <div className="call-to-action">
           <div>Check out these awesome deals before they are gone!</div>
           <div> And see what else we have for sale below</div>
-          <a href="#shop-categories">
-            <img className="down-arrow" src={arrow} alt="down arrow" />
+          <a href="#shop-arrow">
+            <img
+              className="down-arrow"
+              src={arrow}
+              alt="down arrow"
+              id="shop-arrow"
+            />
           </a>
         </div>
         <Slideshow />
@@ -22,3 +27,4 @@ const Hero = () => {
 };
 
 export default Hero;
+//#shop-categories
