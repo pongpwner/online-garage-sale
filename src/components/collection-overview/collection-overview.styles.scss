@@ -7,5 +7,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
+    @media (max-width: 1050px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 875px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
