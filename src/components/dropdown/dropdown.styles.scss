@@ -14,6 +14,7 @@
     z-index: 2;
     min-width: 150px;
     opacity: 1;
+
     a {
       color: black;
       font-size: 1.5rem;
@@ -28,18 +29,19 @@
       flex-direction: column;
     }
   }
-  &:hover .dropdown-content,
-  &:hover .background {
-    display: flex;
-    flex-direction: column;
-  }
-  &:hover .background {
-    &:hover {
-      display: none;
-    }
-  }
+  // &:hover .dropdown-content,
+  // &:hover .background {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  // &:hover .background {
+  //   &:hover {
+  //     display: none;
+  //   }
+  // }
 
   .background {
+    display: none;
     width: 200vw;
     height: 100vh;
     position: absolute;
@@ -48,5 +50,10 @@
     left: -50vw;
     display: none;
     z-index: 1;
+  }
+  .active {
+    display: flex;
+    display: flex;
+    flex-direction: column;
   }
 }

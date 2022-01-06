@@ -113,7 +113,7 @@ const mapStateToProps = (state) => ({
   selectToys: selectToys(state),
   selectClothing: selectClothing(state),
   selectBooks: selectBooks(state),
-  selectVideoGames: selectGames(state),
+  selectGames: selectGames(state),
   selectSports: selectSports(state),
   selectFurniture: selectFurniture(state),
   selectTools: selectTools(state),

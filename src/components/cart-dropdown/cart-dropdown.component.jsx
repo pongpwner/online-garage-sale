@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./cart-dropdown.styles.scss";
 import cartIcon from "../../assets/icons/shopping-cart-30.png";
 import { connect } from "react-redux";
@@ -12,15 +12,16 @@ import CartItem from "../cart-item/cart-item.component";
 import CartDropdownItem from "../cart-dropdown-item/cart-dropdown-item.component";
 
 const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
+  const [active, setActive] = useState(false);
   return (
-    <div className="cart-dropdown">
+    <div className="cart-dropdown" onMouseOver={() => setActive(true)}>
       <Link to="/cart">
         <button type="button" className="cart-icon-container">
           <div className="cart-quantity">{itemCount} </div>
           <img className="cart-icon" src={cartIcon} alt="cart"></img>
         </button>
       </Link>
-      <div className="dropdown-content">
+      <div className={`dropdown-content ${active ? "active" : ""}`}>
         {itemCount < 1 ? (
           <div className="empty-cart">cart empty</div>
         ) : (
@@ -40,7 +41,9 @@ const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
                 />
               ))}
             </div>
-            <Link to="cart">Checkout</Link>
+            <Link to="cart" onClick={() => setActive(false)}>
+              Checkout
+            </Link>
           </div>
         )}
       </div>
