@@ -14,7 +14,7 @@ const Hero = () => {
         <Slideshow />
         <div className="call-to-action two">
           <div> And see what else we have for sale below</div>
-          <a href="#shop-arrow">
+          <a href="#shop-categories">
             <img
               className="down-arrow"
               src={arrow}
