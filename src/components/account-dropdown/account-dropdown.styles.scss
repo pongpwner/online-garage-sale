@@ -2,7 +2,7 @@
   position: relative;
   .dropdown-label {
     padding: 10px 7px 10px 7px;
-
+    border: 1px solid black;
     &:hover {
       border: 1px solid white;
     }
@@ -19,7 +19,7 @@
     min-width: 200px;
     right: 0;
     .account-name {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     .sign-out {
       color: black;
