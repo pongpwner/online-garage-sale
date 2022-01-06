@@ -1,63 +1,82 @@
-.account-dropdown {
-  position: relative;
-  .dropdown-label {
-    padding: 10px 7px 10px 7px;
+.account-dropdown-container {
+  .sign-in {
     border: 1px solid black;
+    padding-right: 0;
+    a {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    @media (max-width: 350px) {
+      padding-right: 5px;
+    }
+
     &:hover {
       border: 1px solid white;
     }
-    img {
-      filter: invert(1);
-    }
   }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: 47px;
-    z-index: 2;
-    min-width: 200px;
-    right: 0;
-    .account-name {
-      font-size: 1.5rem;
-    }
-    .sign-out {
-      color: black;
-      background-color: white;
-      font-size: 1.5rem;
-      width: 100%;
-      text-align: center;
+  .account-dropdown {
+    position: relative;
+    .dropdown-label {
+      padding: 10px 7px 10px 7px;
+      border: 1px solid black;
+
       &:hover {
-        background-color: lightgray;
+        border: 1px solid white;
+      }
+      img {
+        filter: invert(1);
+      }
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      top: 47px;
+      z-index: 2;
+      min-width: 200px;
+      right: 0;
+      .account-name {
+        font-size: 1.5rem;
+      }
+      .sign-out {
+        color: black;
+        background-color: white;
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        &:hover {
+          background-color: lightgray;
+        }
+      }
+
+      .cart-list {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &:hover .dropdown-content,
+    &:hover .background {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover .background {
+      &:hover {
+        display: none;
       }
     }
 
-    .cart-list {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  &:hover .dropdown-content,
-  &:hover .background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &:hover .background {
-    &:hover {
+    .background {
+      width: 200vw;
+      height: 100vh;
+      position: absolute;
+      background-color: black;
+      opacity: 0.8;
+      left: -100vw;
       display: none;
+      z-index: 1;
     }
-  }
-
-  .background {
-    width: 200vw;
-    height: 100vh;
-    position: absolute;
-    background-color: black;
-    opacity: 0.8;
-    left: -100vw;
-    display: none;
-    z-index: 1;
   }
 }

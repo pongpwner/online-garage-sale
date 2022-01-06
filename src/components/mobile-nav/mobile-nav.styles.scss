@@ -1,25 +1,31 @@
-.dropdown {
+.mobile-nav {
   position: relative;
-  @media (max-width: 825px) {
+  @media (min-width: 825px) {
     display: none;
   }
-  .dropdown-label {
-    padding: 10px 7px 10px 7px;
-    border: 1px solid black;
+  .hamburger {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    &:hover {
-      border: 1px solid white;
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: white;
     }
   }
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
-    top: 48px;
+    top: 35px;
     z-index: 2;
     min-width: 150px;
     opacity: 1;
-
+    flex-direction: column;
+    left: -84px;
     a {
       color: black;
       font-size: 1.5rem;
@@ -28,23 +34,7 @@
         background-color: lightgray;
       }
     }
-
-    .cart-list {
-      display: flex;
-      flex-direction: column;
-    }
   }
-  // &:hover .dropdown-content,
-  // &:hover .background {
-  //   display: flex;
-  //   flex-direction: column;
-  // }
-  // &:hover .background {
-  //   &:hover {
-  //     display: none;
-  //   }
-  // }
-
   .background {
     display: none;
     width: 200vw;
@@ -58,7 +48,5 @@
   }
   .active {
     display: flex;
-    display: flex;
-    flex-direction: column;
   }
 }

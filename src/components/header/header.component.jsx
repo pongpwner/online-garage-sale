@@ -11,6 +11,7 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import cartIcon from "../../assets/icons/shopping-cart-30.png";
 import logo from "../../assets/icons/ogs-logo.png";
 import AccountDropdown from "../account-dropdown/account-dropdown.component";
+import MobileNav from "../mobile-nav/mobile-nav.component";
 import {
   selectCategory,
   selectElectronics,
@@ -37,6 +38,11 @@ const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
         <Link to="/">
           <img className="logo" src={logo} alt="logo"></img>{" "}
         </Link>
+        <MobileNav
+          labelLink="/shop"
+          label="Shop"
+          dropdownList={dropdownOptions}
+        />
 
         <Dropdown
           labelLink="/shop"

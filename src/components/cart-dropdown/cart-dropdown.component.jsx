@@ -13,8 +13,12 @@ import CartDropdownItem from "../cart-dropdown-item/cart-dropdown-item.component
 
 const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
   const [active, setActive] = useState(false);
+
+  function toggle() {
+    setActive(!active);
+  }
   return (
-    <div className="cart-dropdown" onMouseOver={() => setActive(true)}>
+    <div className="cart-dropdown" onClick={toggle}>
       <Link to="/cart">
         <button type="button" className="cart-icon-container">
           <div className="cart-quantity">{itemCount} </div>

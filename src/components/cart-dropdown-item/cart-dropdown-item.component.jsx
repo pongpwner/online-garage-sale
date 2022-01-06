@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./cart-dropdown-item.styles.scss";
 import { selectCartItems } from "../../redux/cart/cart.selectors";
 import { removeItemFromCart } from "../../redux/cart/cart.actions";
@@ -13,8 +13,12 @@ const CartDropdownItem = ({
   removeItemFromCart,
   changeQuantity,
 }) => {
+  const [active, setActive] = useState(false);
+  function toggle() {
+    setActive(!active);
+  }
   return (
-    <div className="cart-dropdown-item">
+    <div className="cart-dropdown-item" onClick={toggle}>
       <img src={url} alt={name}></img>
 
       <div className="item-name">{name}</div>

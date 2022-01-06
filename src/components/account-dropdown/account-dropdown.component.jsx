@@ -7,7 +7,7 @@ import avatar from "../../assets/icons/icons8-customer-30.png";
 
 const AccountDropdown = ({ currentUser, signout }) => {
   return (
-    <div>
+    <div className="account-dropdown-container">
       {currentUser ? (
         <div className="account-dropdown">
           <div className="dropdown-label">

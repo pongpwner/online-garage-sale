@@ -20,6 +20,7 @@
     border: solid 1px black;
     &:hover {
       border: solid 1px white;
+      cursor: pointer;
     }
 
     .cart-icon {
@@ -95,7 +96,7 @@
       flex-direction: column;
     }
   }
-  &:hover .active {
+  .active {
     display: flex;
     flex-direction: column;
   }

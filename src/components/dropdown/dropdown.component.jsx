@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 const Dropdown = ({ label, labelLink, dropdownList }) => {
   const [active, setActive] = useState(false);
   return (
-    <div className="dropdown">
-      <div className="dropdown-label" onMouseOver={() => setActive(true)}>
+    <div className="dropdown desktop">
+      <div
+        className="dropdown-label"
+        onMouseOver={() => setActive(true)}
+        onClick={() => setActive(false)}
+      >
         {labelLink ? <Link to={labelLink}> {label}</Link> : <div>{label}</div>}
       </div>
       <div
