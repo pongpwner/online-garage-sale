@@ -19,12 +19,11 @@ const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
   }
   return (
     <div className="cart-dropdown" onClick={toggle}>
-      <Link to="/cart">
-        <button type="button" className="cart-icon-container">
-          <div className="cart-quantity">{itemCount} </div>
-          <img className="cart-icon" src={cartIcon} alt="cart"></img>
-        </button>
-      </Link>
+      <button type="button" className="cart-icon-container">
+        <div className="cart-quantity">{itemCount} </div>
+        <img className="cart-icon" src={cartIcon} alt="cart"></img>
+      </button>
+
       <div className={`dropdown-content ${active ? "active" : ""}`}>
         {itemCount < 1 ? (
           <div className="empty-cart">cart empty</div>
