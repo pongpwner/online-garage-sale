@@ -13,12 +13,9 @@ const CartDropdownItem = ({
   removeItemFromCart,
   changeQuantity,
 }) => {
-  const [active, setActive] = useState(false);
-  function toggle() {
-    setActive(!active);
-  }
+ 
   return (
-    <div className="cart-dropdown-item" onClick={toggle}>
+    <div className="cart-dropdown-item" >
       <img src={url} alt={name}></img>
 
       <div className="item-name">{name}</div>
