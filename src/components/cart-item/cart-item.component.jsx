@@ -22,6 +22,7 @@ const CartItem = ({
 
       <div className="quantity-container cart-item-info">
         <button
+          type="button"
           className="change-quantity"
           onClick={() => changeQuantity({ id, input: -1 })}
         >
@@ -29,6 +30,7 @@ const CartItem = ({
         </button>
         <div className="quantity"> qty:{quantity} </div>
         <button
+          type="button"
           className="change-quantity"
           onClick={() => changeQuantity({ id, input: 1 })}
         >
