@@ -51,9 +51,9 @@
     .category-overview {
       position: absolute;
       z-index: 1;
-      top: 55%;
+      top: calc(70px + 40%);
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, calc(70px + -50%));
       @media (max-height: 720px) {
         top: 190px;
         transform: translate(-50%, 0);
