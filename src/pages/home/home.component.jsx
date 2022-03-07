@@ -9,8 +9,10 @@ const Home = () => (
     <Hero />
     <div className="category-overview-container">
       <div className="background"></div>
-      <h2 className="heading-2">Shop by Category</h2>
-      <CategoryOverview />
+      <div className="content">
+        <h2 className="heading-2">Shop by Category</h2>
+        <CategoryOverview />
+      </div>
     </div>
   </div>
 );
