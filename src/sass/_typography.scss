@@ -1,0 +1,11 @@
+@use "variables" as *;
+.heading-1 {
+  font-size: clamp(1.5rem, 0.7041rem + 4.9796vw, 8rem);
+  color: $color-secondary-1;
+  text-shadow: 0 3px 4px black;
+}
+.heading-2 {
+  font-size: clamp(1.5rem, 0.7041rem + 4.9796vw, 3rem);
+  color: $color-secondary-1;
+  text-shadow: 0 3px 4px black;
+}

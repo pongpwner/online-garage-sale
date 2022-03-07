@@ -1,3 +1,4 @@
+@use "../../sass/variables" as *;
 .cart-dropdown {
   float: right;
   position: relative;
@@ -10,6 +11,7 @@
     background-color: white;
   }
   .cart-icon-container {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: black;
@@ -27,18 +29,18 @@
       filter: brightness(0) invert(1);
     }
     .cart-quantity {
-      background-color: orange;
-      float: right;
+      top: 3px;
+      right: 0;
+      background-color: $color-secondary-1;
+      clip-path: circle(50%);
       position: absolute;
-      color: white;
+      color: $color-primary-1;
       font-size: 0.8rem;
       border-radius: 10px;
       height: 1rem;
       z-index: 3;
-      width: 20px;
-      vertical-align: top;
-      margin-left: 1rem;
-      margin-top: -1.75rem;
+      width: 25px;
+
       display: flex;
       justify-content: center;
       align-items: center;

@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="hero">
       <div className="background"></div>
       <div className="content">
-        <h1 className="welcome">Online Garage Sale</h1>
+        <h1 className="welcome heading-1">Online Garage Sale</h1>
         <div className="hero-group">
           <div className="call-to-action one ">
             <span className="call-to-action-one-text">
@@ -18,14 +18,8 @@ const Hero = () => {
           </div>
 
           <div className="call-to-action two">
-            <div> And see what else we have for sale below</div>
             <a href="#shop-categories">
-              <img
-                className="down-arrow"
-                src={arrow}
-                alt="down arrow"
-                id="shop-arrow"
-              />
+              <div className="down-arrow">&nbsp;</div>
             </a>
           </div>
         </div>

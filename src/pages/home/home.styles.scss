@@ -1,8 +1,48 @@
+@use "../../sass/variables" as *;
+
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1{
-      
+  width: 100%;
+
+  .category-overview-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    .background {
+      width: 100%;
+      height: 100vh;
+      background-color: $color-primary-1;
+      clip-path: polygon(
+        0% 0%,
+        0% 100%,
+        0 100%,
+        0 27%,
+        100% 0,
+        100% 73%,
+        0 100%,
+        11% 100%,
+        100% 100%,
+        100% 0%
+      );
+    }
+    .heading-2 {
+      text-align: center;
+      position: absolute;
+      z-index: 1;
+
+      top: 70px;
+    }
+    .category-overview {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }

@@ -1,3 +1,4 @@
+@use "../../sass/variables" as *;
 .header {
   height: 60px;
   display: flex;
@@ -22,7 +23,10 @@
     display: flex;
     align-items: center;
     .logo {
-      height: 40px;
+      height: 60px;
+      font-size: 50px;
+      color: $color-secondary-1;
+      line-height: 55px;
     }
   }
   a,
@@ -36,10 +40,10 @@
   }
   .shop {
     display: flex;
-    padding: 0;
-    margin: 3px;
+    padding: 3px;
+    margin: 0;
     &:hover {
-      border: 1px solid white;
+      border: 1px solid $color-secondary-1;
     }
     a {
       font-size: 1em;
@@ -54,7 +58,7 @@
     font-size: 1.2em;
     padding: 10px;
     &:hover {
-      border: 1px solid white;
+      border: 1px solid $color-secondary-1;
     }
   }
   .sign-in,

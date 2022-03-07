@@ -31,12 +31,12 @@ const Header = ({ selectCurrentUser, signOutStart, selectCartItemsCount }) => {
     { label: "furniture", url: "/shop/furniture", id: 6 },
     { label: "tools", url: "/shop/tools", id: 7 },
   ];
-
+  // <img className="logo" src={logo} alt="logo"></img>{" "}
   return (
     <div className="header">
       <div className="header-links group1">
         <Link to="/">
-          <img className="logo" src={logo} alt="logo"></img>{" "}
+          <div className="logo">OGS</div>
         </Link>
         <MobileNav
           labelLink="/shop"

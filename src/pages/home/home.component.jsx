@@ -7,9 +7,11 @@ import Hero from "../../components/hero/hero.component";
 const Home = () => (
   <div className="home">
     <Hero />
-
-    <h1>Shop by Category</h1>
-    <CategoryOverview />
+    <div className="category-overview-container">
+      <div className="background"></div>
+      <h2 className="heading-2">Shop by Category</h2>
+      <CategoryOverview />
+    </div>
   </div>
 );
 

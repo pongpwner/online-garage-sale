@@ -5,7 +5,7 @@ import CollectionItem from "../collection-item/collection-item.component";
 
 const CollectionOverview = ({ collection, title }) => (
   <div className="collection-overview">
-    <h1>{title}</h1>
+    <h2 className="heading-2">{title}</h2>
     <div className="items">
       {collection.map((item) => (
         <CollectionItem

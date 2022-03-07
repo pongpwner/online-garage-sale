@@ -20,7 +20,8 @@ const CartDropdown = ({ itemCount, cartItems, cartTotal }) => {
   return (
     <div className="cart-dropdown" onClick={toggle}>
       <button type="button" className="cart-icon-container">
-        <div className="cart-quantity">{itemCount} </div>
+        {itemCount > 0 && <div className="cart-quantity">{itemCount} </div>}
+
         <img className="cart-icon" src={cartIcon} alt="cart"></img>
       </button>
 
