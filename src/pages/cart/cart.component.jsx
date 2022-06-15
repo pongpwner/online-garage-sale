@@ -3,12 +3,12 @@ import "./cart.styles.scss";
 import { connect } from "react-redux";
 import CartList from "../../components/cart-list/cart-list.component";
 import { emptyCart } from "../../redux/cart/cart.actions";
-import { Link } from "react-router-dom";
+
+import PaymentForm from "../../components/payment-form/payment-form.component";
 import {
   selectCartTotal,
   selectCartItemsCount,
 } from "../../redux/cart/cart.selectors";
-import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
 const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
   <div className="cart">
@@ -26,8 +26,7 @@ const Cart = ({ emptyCart, selectCartTotal, selectCartItemsCount }) => (
         {" "}
         Cart Total: ${selectCartTotal}
       </div>
-
-      <StripeCheckoutButton price={selectCartTotal} />
+      <PaymentForm />
     </div>
     <div className="test-warning ">
       *use the following card for test payments*

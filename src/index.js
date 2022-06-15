@@ -9,13 +9,16 @@ import { BrowserRouter } from "react-router-dom";
 import browserHistory from "./history.js";
 import { ConnectedRouter } from "connected-react-router";
 import { PersistGate } from "redux-persist/integration/react";
-
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./stripe/stripe.utils";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter history={browserHistory}>
         <PersistGate persistor={persistor}>
-          <App />
+          <Elements stripe={stripePromise}>
+            <App />
+          </Elements>
         </PersistGate>
       </BrowserRouter>
     </Provider>
